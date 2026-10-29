@@ -1,0 +1,4 @@
+interface:
+  display_name: "让我看懂"
+  short_description: "用清楚中文与 HTML 图解讲明白机制、证据和边界，支持项目交接"
+  default_prompt: "请使用 $help-me-understand 让我看懂这份材料，按需要用文字或 HTML 图解释机制、证据和适用边界。"
