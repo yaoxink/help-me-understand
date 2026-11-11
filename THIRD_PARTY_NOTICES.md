@@ -1,21 +1,33 @@
 # 来源与第三方说明
 
-本文件记录当前发布包的依赖与方法来源。它不授予第三方材料的权利，也不为完整发布包新增许可。
+本文件记录当前1.2.0发布包的来源与许可边界，不为整包新增许可证。
 
 ## help-me-understand 原始输入包
 
-本发布包来自用户现有的 `help-me-understand` 个人技能。其来源记录提到输入包 `help-me-understand.zip`，但本次未取得足以核定该原包完整权利来源的材料。因此没有为整包新增 MIT、Apache-2.0 等许可声明。对外再分发、修改和商业使用的许可范围，应由维护者在核定来源后明确。
+本包来自用户现有的 help-me-understand 个人技能。原有来源记录提到输入包 help-me-understand.zip；未据此核定整包完整权利来源，因此继续保留未指定整包许可证的状态，不新增MIT或Apache-2.0等整包授权。
 
-本次对发布副本的改动限于个人路径泛化、安装和来源文档；原有解释行为与自拟验收材料保留。
+1.2.0只更新发布副本，保留理解卡点、中文保真、来源边界、反馈修正和自拟教学材料；未修改本机个人技能。整包再分发与商业许可范围由维护者核定。本文件中的第三方许可只适用于相应组件。
 
-## visual-explainer
+## 内置图解运行代码与参考
 
-- 项目：[nicobailon/visual-explainer](https://github.com/nicobailon/visual-explainer)
-- 作者：Nico Bailon
-- 上游许可：[MIT License](https://github.com/nicobailon/visual-explainer/blob/main/LICENSE)，Copyright (c) 2025 Nico Bailon。
-- 用途：本技能的 HTML 图解依赖，用户单独安装；本发布包未复制或捆绑其源码。
+- 来源项目：[nicobailon/visual-explainer](https://github.com/nicobailon/visual-explainer)，本次纳入的本地版本为0.14.0。
+- MIT，Copyright (c) 2025 Nico Bailon。完整声明见 [`VISUAL-EXPLAINER-LICENSE`](skills/help-me-understand/assets/runtime/VISUAL-EXPLAINER-LICENSE)。
+- 用途：必要的样式、SVG/数据组件、步骤回放、图文联动、读者反馈、Mermaid渲染和几何检查。本次已随包提供，**不再要求单独安装其他Skill**。
+- 改动：增加单包脚本入口、去除远程字体引用、检查器采用禁网内存载入方式；增加禁JS与打印修复、浏览器探测及真实图文件导出。修改只在本发布包发生。
+- 未纳入第二个Skill入口、上游宿主插件或全部视频/幻灯片工作流。
 
-若今后捆绑上游文件，应随复制内容保留其版权与许可声明。上游的 MIT 许可不自动成为本发布包其他文件的许可。
+## Pele Mermaid 引擎与图标
+
+- 离线Mermaid渲染器随图解库分发，MIT，Copyright (c) 2026 kepano。
+- 其中Lucide图标按其ISC许可分发。
+- 完整版权及许可见 [`PELE-LICENSE`](skills/help-me-understand/assets/runtime/kit/vendor/PELE-LICENSE)。
+
+## playwright-core 浏览器客户端
+
+- 来源：[Microsoft Playwright](https://github.com/microsoft/playwright)，本次内置 playwright-core 1.64.1。
+- Apache-2.0；保留原始 [`LICENSE`](skills/help-me-understand/assets/runtime/browser-client/LICENSE)、[`NOTICE`](skills/help-me-understand/assets/runtime/browser-client/NOTICE)及 [`ThirdPartyNotices.txt`](skills/help-me-understand/assets/runtime/browser-client/ThirdPartyNotices.txt)。
+- 用于本机隔离浏览器检查和图文件导出；不包含浏览器二进制，不自动下载浏览器。
+- 移除了该客户端中仅供其CLI安装用的Skill文档与示例，API运行代码和许可保留。本包只有一个Skill入口。
 
 ## 方法参考
 

@@ -1,28 +1,13 @@
-# 来源与组合边界
+# 来源、许可与分发边界
 
-本组合版整理日期：2026-10-13。可移植发布封装日期：2026-10-29。
+独立分发版：1.2.0，2026-11-11。保留用户本地 help-me-understand 1.0.0 的卡点判断、中文保真、来源边界、反馈修正和教学材料；未修改本机原版。
 
-## 用户提供的基础包
+本版将本地 visual-explainer 0.14.0 的必要图解样式、组件、SVG/Mermaid渲染、回放/联动/读者反馈及几何检查代码作为普通运行库纳入 assets/runtime（MIT，版权声明见 VISUAL-EXPLAINER-LICENSE）。这是单个Skill的支持文件，无第二个SKILL.md，不调用外部Skill。部分配套方法参考来自该版本并按独立包路径适配；原文英文文风不覆盖本入口中文保真规则。
 
-- 输入：`help-me-understand.zip`，内部主入口为 `help-me-understand/SKILL.md`。
-- 采用其理解卡点选择、中文表达适配、语义与来源保真、反馈调整，以及自拟资料处理器和行为案例。
-- 原包的 `references/sources.md` 记载了 2026-10-09 的规范与研究核验声明。本次没有重新核验全部外部文献，也不把原包的声明升级为组合版已验证结果。
-- 原包的 SVG 与 HTML 示例没有作为本版绘图模板；图解由用户明确指定的 visual-explainer 负责。
+修改：新增统一脚本入口与严格检查结果，去除远程字体链接；几何检查改为禁网、内存载入生成HTML，不导航文件URL或使用用户登录浏览器；新增本机浏览器探测与真实SVG/PNG/PDF导出；增加禁JS时完整图可读且隐藏失效播放器的静态回退，PDF图形导出按图尺寸单页排版避免裁切。修改后的源码仅位于本发布包。
 
-## 方法线索
+Pele离线Mermaid引擎及其图标许可见 assets/runtime/kit/vendor/PELE-LICENSE。浏览器客户端 playwright-core 1.64.1 按Apache-2.0分发，保留 assets/runtime/browser-client/LICENSE、NOTICE及其附带第三方许可文件。未随包提供浏览器二进制。已剔除浏览器客户端中仅供其CLI安装用的Skill文档与示例，保留API运行代码及许可证；本包没有这些嵌套技能。
 
-- [Karpathy 原帖](https://x.com/karpathy/status/2105819303471976479)：文字、图示、网页与定制讲解视频的建议。2026-10-29 原帖直接读取返回 403；本次通过[公开镜像](https://xitter.cf/karpathy/status/2105819303471976479)核对了相关文字。它是个人建议，不能视为已经验证的理解收益。
-- [ASD-STE100 官方介绍](https://www.asd-ste100.org/about_STE.html) 与 [官方下载入口](https://www.asd-ste100.org/STE_downloads.html)：正式英文规范及词典的权威入口。此 Skill 只借鉴表达原则，不附官方完整规范、词典或其翻译。
-- [社区 asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill)：本次会话此前检查了其英文改写规则与结构检查器。未复制其程序，也不把检查通过作为中文语义、业务门禁或理解效果证明。
+需要 Node.js 20+，真实页面检查/导出需要本机 Chrome/Edge/Chromium。包已含JavaScript依赖，不需其他Skill、npm下载、API密钥或付费服务。缺少工具不等于通过，按入口报告未完成项。
 
-## 图解依赖与开发参考
-
-- [nicobailon/visual-explainer](https://github.com/nicobailon/visual-explainer)：图解和 HTML 实现依赖。2026-10-13 整合时读取版本 0.12.0；2026-10-29 本机入口标记为 0.14.0。后续运行读取目标环境当前安装版本，不冻结或复制整份依赖。Codex 默认入口为 `~/.codex/skills/visual-explainer/SKILL.md`，安装源目录见上游 README。
-- 依赖的 `references/style-guide.md` 和按需 `references/diagrams.md`：样式、SVG 与交互方法。
-- Codex 内置 `skill-creator`：开发时参考其技能结构、渐进加载、UI 元数据及验证规范；不是运行本技能的附加依赖。
-
-用户指定的 visual-explainer 需在目标环境中可读。单独分发本包不表示该依赖已同时安装；不得伪报调用成功。
-
-## 新增的个人使用约定
-
-实际用途先行、按需展开、交接可独立续接、当前权威状态优先，以及把文件、页面检查、AI 接手、真人理解与真实使用分开报告。它们服务于当前用户的工作方式，不是 STE 标准中的规则。
+中文表达借鉴清晰技术表达目标，不是官方中文STE规范、完整译本或认证。教学材料与模型均为自拟，不是真实研究或产品证据。具体行为与输出验收由包外报告给出，引用案例不等于案例已通过。
