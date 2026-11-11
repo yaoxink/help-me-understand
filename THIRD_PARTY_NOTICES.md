@@ -1,6 +1,6 @@
 # 来源与第三方说明
 
-本文件记录当前1.2.0发布包的来源与许可边界，不为整包新增许可证。
+本文件记录当前1.2.1发布包的来源与许可边界，不为整包新增许可证。
 
 ## help-me-understand 原始输入包
 
@@ -27,7 +27,7 @@
 - 来源：[Microsoft Playwright](https://github.com/microsoft/playwright)，本次内置 playwright-core 1.64.1。
 - Apache-2.0；保留原始 [`LICENSE`](skills/help-me-understand/assets/runtime/browser-client/LICENSE)、[`NOTICE`](skills/help-me-understand/assets/runtime/browser-client/NOTICE)及 [`ThirdPartyNotices.txt`](skills/help-me-understand/assets/runtime/browser-client/ThirdPartyNotices.txt)。
 - 用于本机隔离浏览器检查和图文件导出；不包含浏览器二进制，不自动下载浏览器。
-- 移除了该客户端中仅供其CLI安装用的Skill文档与示例，API运行代码和许可保留。本包只有一个Skill入口。
+- 移除了该客户端中仅供其CLI安装用的Skill文档与示例，API运行代码和许可保留。1.2.1另移除未参与Skill运行的录制/报告/调试界面静态资源；保留类型声明和WASM。coreBundle.js及utilsBundle.js只精简格式空白，原有语法标记、注释、标识符保留，并添加修改说明。本包只有一个Skill入口。
 
 ## 方法参考
 
