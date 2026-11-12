@@ -2,14 +2,14 @@
 
 看不懂文档、技术方案或复杂概念时，用通俗中文、具体例子、流程图或交互网页，帮你弄清“是什么、怎么运作、为什么”。没懂的地方可以继续追问，换个例子或拆开步骤解释，同时保留关键事实、适用条件和不确定性。
 
-`help-me-understand` 是一个用于 Codex 等技能宿主的中文理解技能。当前独立分发版为 **1.2.1**：单个 Skill，自带图解方法、渲染工具和必要 JavaScript 库，**不需要另外安装或调用其他 Skill**。
+`help-me-understand` 是一个用于 Codex 等技能宿主的中文理解技能。当前独立分发版为 **1.2.2**：单个 Skill，自带图解方法、渲染工具和必要 JavaScript 库，**不需要另外安装或调用其他 Skill**。
 
-**大小：ZIP 2.22 MB，解压后 9.55 MB（9,548,759 字节），低于 10 MB 上限。** 保持原有技能流程、图解框架和运行功能；仅移除未使用的浏览器调试界面资源，并精简运行代码的格式空白。
+**大小：ZIP 2.00 MB，解压后 8.95 MB（8,948,344 字节），低于 10 MB 上限。** 保持原有技能流程、图解框架和运行功能；仅移除未使用的浏览器调试界面资源，并精简运行代码的格式空白。
 
 ## 下载与安装
 
-- [下载 1.2.1 独立技能包](https://github.com/yaoxink/help-me-understand/releases/download/v1.2.1/help-me-understand-1.2.1.zip)
-- [查看版本发布页](https://github.com/yaoxink/help-me-understand/releases/tag/v1.2.1)
+- [下载 1.2.2 独立技能包](https://github.com/yaoxink/help-me-understand/releases/download/v1.2.2/help-me-understand-1.2.2.zip)
+- [查看版本发布页](https://github.com/yaoxink/help-me-understand/releases/tag/v1.2.2)
 - 技能源码位于 [`skills/help-me-understand/`](skills/help-me-understand/)。
 
 ZIP 内根目录是 `SKILL.md`、`agents/`、`references/`、`scripts/` 和 `assets/`。解压时新建名为 `help-me-understand` 的文件夹，再把整个文件夹放入宿主的技能目录。Codex 默认目录是 `~/.codex/skills/`；已有同名技能时先比较，不直接覆盖。
@@ -48,6 +48,14 @@ $help-me-understand 还是没懂，为什么生成完成不代表内容已经核
 
 用户指定的形式优先。简单问题不强制做网页；没有依据的内容不会靠猜测补齐。教学模型与真实预测分开标注。
 
+## 上传端禁止二进制文件时
+
+1.2.2发布包中的89个文件均为UTF-8文本，不再携带两个appIcon.png和webp_codec.wasm。没有通过改扩展名、编码隐藏载荷或运行时下载来绕过限制。
+
+图标只属于底层工具的独立窗口；WASM用于额外的Node WebP编码/比较接口，不参与本Skill声明的PNG/SVG/PDF输出。Skill图解框架和脚本保持原样，WebP素材仍由本机浏览器原生读取；该读取及PNG/PDF导出已单独复测。不要据此把整个底层浏览器SDK的扩展接口都视作本包承诺的功能。
+
+本地发布预检不等于平台审核通过；最终以上传端的实际结果为准。
+
 ## 图解运行条件
 
 文字解释需要能读取材料的 AI 助手。使用内置图解工具与实际浏览器检查，还需要：
@@ -79,7 +87,7 @@ PDF 默认导出适合图形尺寸的单页；需要整个网页的 A4 打印版
 
 ## 已验证的范围
 
-1.2.1 已进行独立调用与对照验收：
+1.2.2 已进行独立调用与对照验收：
 
 - 对同一份原版源码，原有核心 CSS、JS、SVG 保持一致；额外修复禁用 JavaScript 和打印时的可读性。
 - 在既有独立试用基础上复跑 **42 项真实离线浏览器检查**，另完成 **7 组综合复核**；两者有重叠，不能相加为独立样本数。
