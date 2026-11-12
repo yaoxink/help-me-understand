@@ -1,12 +1,12 @@
 # 来源、许可与分发边界
 
-独立分发版：1.2.2，2026-11-11。保留用户本地 help-me-understand 1.0.0 的卡点判断、中文保真、来源边界、反馈修正和教学材料；未修改本机原版。
+独立分发版：1.2.3，2026-11-12。保留用户本地 help-me-understand 1.0.0 的卡点判断、中文保真、来源边界、反馈修正和教学材料；未修改本机原版。
 
-本版将本地 visual-explainer 0.14.0 的必要图解样式、组件、SVG/Mermaid渲染、回放/联动/读者反馈及几何检查代码作为普通运行库纳入 assets/runtime（MIT，版权声明见 VISUAL-EXPLAINER-LICENSE）。这是单个Skill的支持文件，无第二个SKILL.md，不调用外部Skill。部分配套方法参考来自该版本并按独立包路径适配；原文英文文风不覆盖本入口中文保真规则。
+本版将本地 visual-explainer 0.14.0 的必要图解样式、组件、SVG/Mermaid渲染、回放/联动/读者反馈及几何检查代码作为普通运行库纳入 assets/runtime（MIT，版权声明见 VISUAL-EXPLAINER-LICENSE.txt）。这是单个Skill的支持文件，无第二个SKILL.md，不调用外部Skill。部分配套方法参考来自该版本并按独立包路径适配；原文英文文风不覆盖本入口中文保真规则。
 
 修改：新增统一脚本入口与严格检查结果，去除远程字体链接；几何检查改为禁网、内存载入生成HTML，不导航文件URL或使用用户登录浏览器；新增本机浏览器探测与真实SVG/PNG/PDF导出；增加禁JS时完整图可读且隐藏失效播放器的静态回退，PDF图形导出按图尺寸单页排版避免裁切。修改后的源码仅位于本发布包。
 
-Pele离线Mermaid引擎及其图标许可见 assets/runtime/kit/vendor/PELE-LICENSE。浏览器客户端 playwright-core 1.64.1 按Apache-2.0分发，保留 assets/runtime/browser-client/LICENSE、NOTICE及其附带第三方许可文件。未随包提供浏览器二进制。已剔除浏览器客户端中仅供其CLI安装用的Skill文档与示例，保留API运行代码及许可证；本包没有这些嵌套技能。
+Pele离线Mermaid引擎及其图标许可见 assets/runtime/kit/vendor/PELE-LICENSE.txt。浏览器客户端 playwright-core 1.64.1 按Apache-2.0分发，保留 assets/runtime/browser-client/LICENSE.txt、NOTICE.txt及其附带第三方许可文件。未随包提供浏览器二进制。已剔除浏览器客户端中仅供其CLI安装用的Skill文档与示例，保留API运行代码及许可证；本包没有这些嵌套技能。
 
 需要 Node.js 20+，真实页面检查/导出需要本机 Chrome/Edge/Chromium。包已含JavaScript依赖，不需其他Skill、npm下载、API密钥或付费服务。缺少工具不等于通过，按入口报告未完成项。
 
@@ -15,3 +15,5 @@ Pele离线Mermaid引擎及其图标许可见 assets/runtime/kit/vendor/PELE-LICE
 1.2.1 仅做分发体积精简：移除浏览器依赖中未参与本Skill运行的录制器、trace viewer、dashboard和HTML报告界面静态资源；保留浏览器执行核心、类型声明、WASM、图解框架与许可证。两份浏览器核心bundle仅压紧冗余格式空白，原有注释、语法标记和标识符全部保留，不做逻辑优化或混淆，并在修改文件中标注格式变动。技能流程与所有图解/验收/导出脚本保持原样。
 
 1.2.2（2026-11-12）适配上传端禁止二进制文件的限制：移除未参与Skill声明功能的两个独立工具窗口图标及Node WebP编解码WASM；不通过改名、编码内嵌或运行时下载来隐藏这些二进制。本Skill的PNG/SVG/PDF输出、浏览器原生读取WebP素材保持原有实现。底层浏览器客户端扩展的Node WebP截图编码/图片比较不属于本包承诺的接口。所有框架与功能脚本保持原样。
+
+1.2.3（2026-11-12）修正文本文件命名：7份无扩展名或.LICENSE结尾的许可证/NOTICE统一追加.txt，原始许可内容逐字节保留；xdg-open脚本追加.sh并同步其唯一的本地路径引用，系统xdg-open命令不变。更新相关文档路径，未改变Skill流程、图解框架、验收标准或功能。

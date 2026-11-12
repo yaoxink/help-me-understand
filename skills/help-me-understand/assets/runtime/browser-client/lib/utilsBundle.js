@@ -1,3 +1,4 @@
+/*! Packaging modification 2026-11-12: local xdg-open helper filename changed to xdg-open.sh; matching path updated. */
 /*! Packaging modification 2026-11-11: redundant formatting whitespace only; all tokens, identifiers, comments and licenses preserved. */
 "use strict";
 var __create = Object.create;
@@ -51769,7 +51770,7 @@ var is_in_ssh_default = isInSsh;
 var import_meta = {};
 var fallbackAttemptSymbol = /* @__PURE__ */ Symbol("fallbackAttempt");
 var __dirname = import_meta.url ? import_node_path.default.dirname((0, import_node_url.fileURLToPath)(import_meta.url)) : "";
-var localXdgOpenPath = import_node_path.default.join(__dirname, "xdg-open");
+var localXdgOpenPath = import_node_path.default.join(__dirname, "xdg-open.sh");
 var { platform, arch } = import_node_process7.default;
 var tryEachApp = async (apps2, opener) => {
 if (apps2.length === 0) {

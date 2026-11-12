@@ -1,6 +1,6 @@
 # 来源与第三方说明
 
-本文件记录当前1.2.2发布包的来源与许可边界，不为整包新增许可证。
+本文件记录当前1.2.3发布包的来源与许可边界，不为整包新增许可证。
 
 ## help-me-understand 原始输入包
 
@@ -11,7 +11,7 @@
 ## 内置图解运行代码与参考
 
 - 来源项目：[nicobailon/visual-explainer](https://github.com/nicobailon/visual-explainer)，本次纳入的本地版本为0.14.0。
-- MIT，Copyright (c) 2025 Nico Bailon。完整声明见 [`VISUAL-EXPLAINER-LICENSE`](skills/help-me-understand/assets/runtime/VISUAL-EXPLAINER-LICENSE)。
+- MIT，Copyright (c) 2025 Nico Bailon。完整声明见 [`VISUAL-EXPLAINER-LICENSE.txt`](skills/help-me-understand/assets/runtime/VISUAL-EXPLAINER-LICENSE.txt)。
 - 用途：必要的样式、SVG/数据组件、步骤回放、图文联动、读者反馈、Mermaid渲染和几何检查。本次已随包提供，**不再要求单独安装其他Skill**。
 - 改动：增加单包脚本入口、去除远程字体引用、检查器采用禁网内存载入方式；增加禁JS与打印修复、浏览器探测及真实图文件导出。修改只在本发布包发生。
 - 未纳入第二个Skill入口、上游宿主插件或全部视频/幻灯片工作流。
@@ -20,12 +20,12 @@
 
 - 离线Mermaid渲染器随图解库分发，MIT，Copyright (c) 2026 kepano。
 - 其中Lucide图标按其ISC许可分发。
-- 完整版权及许可见 [`PELE-LICENSE`](skills/help-me-understand/assets/runtime/kit/vendor/PELE-LICENSE)。
+- 完整版权及许可见 [`PELE-LICENSE.txt`](skills/help-me-understand/assets/runtime/kit/vendor/PELE-LICENSE.txt)。
 
 ## playwright-core 浏览器客户端
 
 - 来源：[Microsoft Playwright](https://github.com/microsoft/playwright)，本次内置 playwright-core 1.64.1。
-- Apache-2.0；保留原始 [`LICENSE`](skills/help-me-understand/assets/runtime/browser-client/LICENSE)、[`NOTICE`](skills/help-me-understand/assets/runtime/browser-client/NOTICE)及 [`ThirdPartyNotices.txt`](skills/help-me-understand/assets/runtime/browser-client/ThirdPartyNotices.txt)。
+- Apache-2.0；保留原始 [`LICENSE.txt`](skills/help-me-understand/assets/runtime/browser-client/LICENSE.txt)、[`NOTICE.txt`](skills/help-me-understand/assets/runtime/browser-client/NOTICE.txt)及 [`ThirdPartyNotices.txt`](skills/help-me-understand/assets/runtime/browser-client/ThirdPartyNotices.txt)。
 - 用于本机隔离浏览器检查和图文件导出；不包含浏览器二进制，不自动下载浏览器。
 - 移除了该客户端中仅供其CLI安装用的Skill文档与示例，API运行代码和许可保留。1.2.1另移除未参与Skill运行的录制/报告/调试界面静态资源；保留类型声明和WASM。coreBundle.js及utilsBundle.js只精简格式空白，原有语法标记、注释、标识符保留，并添加修改说明。本包只有一个Skill入口。
 
@@ -40,3 +40,7 @@
 ## 1.2.2文本分发适配
 
 移除两个仅供独立工具窗口使用的PNG图标及Node WebP编解码WASM，保留其许可文本和其他声明。图解与SVG/PNG/PDF输出仍使用本机浏览器；WebP素材由浏览器原生读取，不提供底层库额外的Node WebP截图编码/图片比较接口。未内嵌或运行时下载被移除的二进制。
+
+## 1.2.3文本文件命名适配
+
+7份许可证/NOTICE文件追加 `.txt`，完整原始许可文本逐字节保留；相关路径引用同步更新。Linux的xdg-open脚本追加 `.sh`，并仅更新其本地路径字符串，系统xdg-open命令保持不变。浏览器bundle增加该修改说明；不更改Skill流程、图解框架、导出实现或验收标准。

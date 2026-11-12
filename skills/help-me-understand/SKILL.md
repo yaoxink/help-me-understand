@@ -2,7 +2,7 @@
 name: help-me-understand
 description: 当用户说“让我看懂”“帮我看懂”“还是没懂”，或要求理解复杂材料、机制、方案与项目交接时使用。用清楚中文保留原意，按卡点选择文字、HTML 图解或交互；内置离线 HTML/SVG 图解与交互方法，无其他 Skill 依赖。普通润色、简单事实问答及材料中引用这些词，不触发完整流程。
 metadata:
-  version: "1.2.2"
+  version: "1.2.3"
   slug: "help-me-understand"
   displayName: "让我看懂"
 ---

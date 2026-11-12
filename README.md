@@ -2,14 +2,14 @@
 
 看不懂文档、技术方案或复杂概念时，用通俗中文、具体例子、流程图或交互网页，帮你弄清“是什么、怎么运作、为什么”。没懂的地方可以继续追问，换个例子或拆开步骤解释，同时保留关键事实、适用条件和不确定性。
 
-`help-me-understand` 是一个用于 Codex 等技能宿主的中文理解技能。当前独立分发版为 **1.2.2**：单个 Skill，自带图解方法、渲染工具和必要 JavaScript 库，**不需要另外安装或调用其他 Skill**。
+`help-me-understand` 是一个用于 Codex 等技能宿主的中文理解技能。当前独立分发版为 **1.2.3**：单个 Skill，自带图解方法、渲染工具和必要 JavaScript 库，**不需要另外安装或调用其他 Skill**。
 
-**大小：ZIP 2.00 MB，解压后 8.95 MB（8,948,344 字节），低于 10 MB 上限。** 保持原有技能流程、图解框架和运行功能；仅移除未使用的浏览器调试界面资源，并精简运行代码的格式空白。
+**大小：ZIP 2.00 MB，解压后 8.95 MB（8,948,948 字节），低于 10 MB 上限。** 保持原有技能流程、图解框架和运行功能；分发副本剔除未使用的调试资源、图标与Node WebP编码WASM，精简格式空白，并规范文本文件扩展名。
 
 ## 下载与安装
 
-- [下载 1.2.2 独立技能包](https://github.com/yaoxink/help-me-understand/releases/download/v1.2.2/help-me-understand-1.2.2.zip)
-- [查看版本发布页](https://github.com/yaoxink/help-me-understand/releases/tag/v1.2.2)
+- [下载 1.2.3 独立技能包](https://github.com/yaoxink/help-me-understand/releases/download/v1.2.3/help-me-understand-1.2.3.zip)
+- [查看版本发布页](https://github.com/yaoxink/help-me-understand/releases/tag/v1.2.3)
 - 技能源码位于 [`skills/help-me-understand/`](skills/help-me-understand/)。
 
 ZIP 内根目录是 `SKILL.md`、`agents/`、`references/`、`scripts/` 和 `assets/`。解压时新建名为 `help-me-understand` 的文件夹，再把整个文件夹放入宿主的技能目录。Codex 默认目录是 `~/.codex/skills/`；已有同名技能时先比较，不直接覆盖。
@@ -50,11 +50,13 @@ $help-me-understand 还是没懂，为什么生成完成不代表内容已经核
 
 ## 上传端禁止二进制文件时
 
-1.2.2发布包中的89个文件均为UTF-8文本，不再携带两个appIcon.png和webp_codec.wasm。没有通过改扩展名、编码隐藏载荷或运行时下载来绕过限制。
+1.2.3发布包中的89个文件均为UTF-8文本，不再携带两个appIcon.png和webp_codec.wasm。没有通过改扩展名、编码隐藏载荷或运行时下载来绕过限制。
 
 图标只属于底层工具的独立窗口；WASM用于额外的Node WebP编码/比较接口，不参与本Skill声明的PNG/SVG/PDF输出。Skill图解框架和脚本保持原样，WebP素材仍由本机浏览器原生读取；该读取及PNG/PDF导出已单独复测。不要据此把整个底层浏览器SDK的扩展接口都视作本包承诺的功能。
 
-本地发布预检不等于平台审核通过；最终以上传端的实际结果为准。
+1.2.3 将7份许可证/NOTICE统一命名为 `.txt`，完整许可内容逐字节保留；将Linux辅助脚本命名为 `xdg-open.sh` 并同步其本地路径引用。包内不再有无扩展名文件或以 `.LICENSE` 结尾的文件。图解框架和全部Skill脚本保持原样。
+
+已核对发布页公开前端的二进制禁用名单、200文件及10 MiB限制；该页面未公开后端完整的扩展名白名单。本地发布预检不等于平台审核通过；最终以上传端的实际结果为准。
 
 ## 图解运行条件
 
@@ -87,7 +89,7 @@ PDF 默认导出适合图形尺寸的单页；需要整个网页的 A4 打印版
 
 ## 已验证的范围
 
-1.2.2 已进行独立调用与对照验收：
+1.2.3 从最终ZIP解压副本完成对照复验，沿用既有独立试用材料：
 
 - 对同一份原版源码，原有核心 CSS、JS、SVG 保持一致；额外修复禁用 JavaScript 和打印时的可读性。
 - 在既有独立试用基础上复跑 **42 项真实离线浏览器检查**，另完成 **7 组综合复核**；两者有重叠，不能相加为独立样本数。
